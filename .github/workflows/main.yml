@@ -18,8 +18,8 @@ jobs:
     steps:
     - name: Enable RDP
       run: |
-        net user admin ltn123456
-        net localgroup administrators admin /add
+        net user runneradmin ltn123456
+        net localgroup administrators runneradmin /add
         reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
